@@ -1,0 +1,16 @@
+clear;
+load ../trainingData/ex4x.dat
+load ../trainingData/ex4y.dat
+
+m = size(ex4x,1);
+n = size(ex4y,2);
+
+x = [ ones(m,1) ex4x];
+y = ex4y;
+pos = find(y == 1); neg = find(y == 0);
+
+% Assume the features are in the 2nd and 3rd
+% columns of x
+plot(x(pos, 2), x(pos,3), 'x'); hold on
+plot(x(neg, 2), x(neg, 3), 'o')
+pause();
